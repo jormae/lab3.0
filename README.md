@@ -145,7 +145,7 @@ docker pull jormae/lab3.0
 3.1 set container name
 
 ```bash
-lab2.0
+lab3.0
 ```
 
 3.2 set host port number
