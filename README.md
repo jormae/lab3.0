@@ -1,5 +1,5 @@
-
 create database tbl_lab_item
+
 ```bash
 CREATE TABLE `tbl_lab_item`  (
   `labItemId` int(3) NOT NULL AUTO_INCREMENT,
@@ -10,6 +10,7 @@ CREATE TABLE `tbl_lab_item`  (
 ```
 
 add database tbl_lab_item
+
 ```bash
 INSERT INTO `tbl_lab_item` VALUES (1, 'CBC', 1);
 INSERT INTO `tbl_lab_item` VALUES (2, 'Creatinine', 1);
@@ -45,7 +46,9 @@ INSERT INTO `tbl_lab_item` VALUES (31, 'VDRL', 4);
 INSERT INTO `tbl_lab_item` VALUES (32, 'OF', 5);
 INSERT INTO `tbl_lab_item` VALUES (33, 'DCIP', 5);
 ```
+
 create database tbl_lab_type
+
 ```bash
 CREATE TABLE `tbl_lab_type`  (
   `labTypeId` int(3) NOT NULL AUTO_INCREMENT,
@@ -54,7 +57,9 @@ CREATE TABLE `tbl_lab_type`  (
   PRIMARY KEY (`labTypeId`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 ```
+
 insert database tbl_lab_type
+
 ```bash
 INSERT INTO `tbl_lab_type` VALUES (1, 'HT', '1,2');
 INSERT INTO `tbl_lab_type` VALUES (2, 'DM', '1,2');
@@ -64,6 +69,7 @@ INSERT INTO `tbl_lab_type` VALUES (5, 'ANC สามี', '1');
 ```
 
 add database tbl_org
+
 ```bash
 CREATE TABLE `jhcisdb`.`tbl_org`  (
   `orgId` int(2) NOT NULL AUTO_INCREMENT,
@@ -74,75 +80,104 @@ CREATE TABLE `jhcisdb`.`tbl_org`  (
   PRIMARY KEY (`orgId`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 ```
+
 alter table user
+
 ```bash
 ALTER TABLE jhcis.user
 ADD telephone varchar(10) NULL,
 ADD email varchar(100) NULL,
 ```
+
 insert database tbl_org
+
 ```bash
 INSERT INTO `tbl_org` VALUES (1, 'โรงพยาบาลส่งเสริมสุขภาพตำบลปะลุกาสาเมาะ', 'รพ.สต.ปะลุกาสาเมาะ', 'อ.บาเจาะ จ.นราธิวาส 96170', 'นธ 51006.0106/');
 ```
+
 add column labTypeId in table visit
+
 ```bash
 ALTER TABLE jhcisdb.visit ADD labTypeId INT(2) NULL;
 insert user field such email, telephone
 ```
+
 =============================================
 BUILD DOCKER IMAGE
+
 1. modify db info into db.js file
-2.1 build image
+   2.1 build image
+
 ```bash
-docker build -t jormae/lab2.2 .
-```
-2.2 push image
-```bash
-docker push jormae/lab2.2
-```
-2.3 pull image
-```bash
-docker pull jormae/lab2.2
+docker build -t jormae/lab3.0 .
 ```
 
-* if build failed try to run
+2.2 push image
+
+```bash
+docker push jormae/lab3.0
+```
+
+2.3 pull image
+
+```bash
+docker pull jormae/lab3.0
+```
+
+- if build failed try to run
+
 ```bash
 yarn install
 ```
-** to install yarn run command in cmd
+
+\*\* to install yarn run command in cmd
+
 ```bash
 npm install --global yarn
 ```
-3.run image using docker desktop 
+
+3.run image using docker desktop
+
 ```bash
-docker pull jormae/lab2.2
+docker pull jormae/lab3.0
 ```
+
 3.1 set container name
+
 ```bash
 lab2.0
 ```
-3.2 set host port number 
+
+3.2 set host port number
+
 ```bash
 3000
 ```
+
 3.3 set environment variables 'jhcisdb'
+
 ```bash
 NEXT_HOST_NAME
 ```
+
 ```bash
 NEXT_DB_USER
 ```
+
 ```bash
 NEXT_DB_PASSWORD
 ```
+
 ```bash
 NEXT_DB_NAME
 ```
+
 ```bash
 NEXT_DB_PORT
 ```
 
 4.update auto restart container
+
 ```bash
-docker update --restart=always lab2.2
+docker update --restart=always lab3.0
 ```
