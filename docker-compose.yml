@@ -1,0 +1,8 @@
+services:
+  web:
+    image: 'jormae/lab2.0:1.0.0'
+    platform: linux/amd64
+    build: .
+    ports:
+      - 3000:3000 #local:server
+    restart: always

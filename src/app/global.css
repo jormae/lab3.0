@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'THSarabunIT9';
+    src: local('THSarabunIT9'), url(./../../public/fonts/THSarabunIT9.ttf) format('truetype');
+  }
+  
+  @font-face {
+      font-family: 'THSarabunIT9Bold';
+      font-weight: 900;
+      src: local('THSarabunIT9'), url(./../../public/fonts/THSarabunIT9Bold.ttf) format('truetype');
+  }
+  
