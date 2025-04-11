@@ -179,7 +179,7 @@ NEXT_DB_PORT
 3.4 run container
 
 ```bash
-docker run --platform linux/amd64 -d -p 3000:3000 -it -e NEXT_DB_USER=root -e NEXT_DB_PASSWORD=123456 -e NEXT_DB_NAME=jhcisdb -e NEXT_DB_PORT=3333  --name bacho-lab3.0 jormae/bacho-lab3.0
+docker run --platform linux/amd64 -d -p 3000:3000 -it -e NEXT_HOST_NAME=192.168.1.5 -e NEXT_DB_USER=root -e NEXT_DB_PASSWORD=123456 -e NEXT_DB_NAME=jhcisdb -e NEXT_DB_PORT=3333  --name bacho-lab3.0 jormae/bacho-lab3.0
 ```
 
 4.update auto restart container
