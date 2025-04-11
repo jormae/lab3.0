@@ -109,19 +109,19 @@ BUILD DOCKER IMAGE
    2.1 build image
 
 ```bash
-docker build -t jormae/lab3.0 .
+docker build --platform linux/amd64  -t jormae/bacho-lab3.0 .
 ```
 
 2.2 push image
 
 ```bash
-docker push jormae/lab3.0
+docker push jormae/bacho-lab3.0
 ```
 
 2.3 pull image
 
 ```bash
-docker pull jormae/lab3.0
+docker pull jormae/bacho-lab3.0
 ```
 
 - if build failed try to run
@@ -139,7 +139,7 @@ npm install --global yarn
 3.run image using docker desktop
 
 ```bash
-docker pull jormae/lab3.0
+docker pull jormae/bacho-lab3.0
 ```
 
 3.1 set container name
@@ -179,7 +179,7 @@ NEXT_DB_PORT
 3.4 run container
 
 ```bash
-docker run --platform linux/amd64 -d -p 3000:3000 -it -e NEXT_DB_USER=root -e NEXT_DB_PASSWORD=123456 -e NEXT_DB_NAME=jhcisdb -e NEXT_DB_PORT=3306  --name lab3.0 jormae/lab3.0
+docker run --platform linux/amd64 -d -p 3000:3000 -it -e NEXT_DB_USER=root -e NEXT_DB_PASSWORD=123456 -e NEXT_DB_NAME=jhcisdb -e NEXT_DB_PORT=3333  --name bacho-lab3.0 jormae/bacho-lab3.0
 ```
 
 4.update auto restart container
