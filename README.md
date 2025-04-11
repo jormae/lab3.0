@@ -176,8 +176,14 @@ NEXT_DB_NAME
 NEXT_DB_PORT
 ```
 
+3.4 run container
+
+````bash
+docker run --platform linux/amd64 -d -p 3000:3000 -it -e NEXT_DB_USER=root -e NEXT_DB_PASSWORD=123456 -e NEXT_DB_NAME=jhcisdb -e NEXT_DB_PORT=3306  --name lab3.0 jormae/lab3.0
+```
+
 4.update auto restart container
 
 ```bash
 docker update --restart=always lab3.0
-```
+````
